@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - WorkerConnect</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        function switchTab(tab) {
+            const loginBox = document.getElementById("login-box");
+            const registerBox = document.getElementById("register-box");
+            const loginTab = document.getElementById("login-tab");
+            const registerTab = document.getElementById("register-tab");
+
+            if (tab === 'login') {
+                loginBox.classList.add("active");
+                registerBox.classList.remove("active");
+                loginTab.classList.add("active");
+                registerTab.classList.remove("active");
+            } else {
+                loginBox.classList.remove("active");
+                registerBox.classList.add("active");
+                registerTab.classList.add("active");
+                loginTab.classList.remove("active");
+            }
+        }
+
+        async function handleFormSubmit(event, formId, url, successMessage, errorMessage) {
+            event.preventDefault();
+            const form = document.getElementById(formId);
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+
+            try {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    alert(successMessage);
+                } else {
+                    alert(errorMessage);
+                }
+            } catch (error) {
+                alert('An error occurred. Please try again.');
+            }
+        }
+        async function handleFormSubmit(event, formId, url, successMessage, errorMessage, redirectUrl) {
+    event.preventDefault();
+    const form = document.getElementById(formId);
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+
+        if (response.ok) {
+            alert(successMessage);
+            window.location.href = "index2.html"; // Redirect after successful login
+        } else {
+            alert(errorMessage);
+        }
+    } catch (error) {
+        alert('An error occurred. Please try again.');
+    }
+}
+        
+    </script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo"><a href="index.html">WorkerConnect</a></div>
+        <ul class="nav-links">
+            <li><a href="#">Find Workers</a></li>
+            <li><a href="Registerworker.html">Register as Worker</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="help.html">Help</a></li>
+        </ul>
+        <button class="login-btn"><a href="login.html">Login</a></button>
+    </nav>
+
+    <div class="container">
+        <div class="welcome-box">
+            <h2>Welcome to <strong>WorkerConnect</strong></h2>
+            <p>Connect with skilled workers for cleaning, maintenance, and more. Register now to find the perfect match
+                for your needs.</p>
+            <div class="image-group">
+                <img src="login 1.jpg" alt="Signing Contract">
+                <img src="login 2.jpg" alt="Worker in Safety Gear">
+            </div>
+        </div>
+
+        <div class="login-box">
+            <div class="tab-buttons">
+                <button id="login-tab" class="active" onclick="switchTab('login')">Login</button>
+                <button id="register-tab" onclick="switchTab('register')">Register</button>
+            </div>
+
+            <div id="login-box" class="active">
+                <h3>Login</h3>
+                <p>Welcome back! Enter your credentials to continue.</p>
+                <button class="google-login">Continue with Google</button>
+                <span class="divider">OR CONTINUE WITH</span>
+                <form id="login-form" onsubmit="handleFormSubmit(event, 'login-form', 'http://localhost:3001/api/login', 'Login successful!', 'Invalid credentials')" style="margin: 5px 0px;">
+                    <label>Username</label>
+                    <input type="text" name="email" placeholder="Enter your email" required>
+                    <label>Password</label>
+                    <input type="password" name="password" placeholder="Enter your password" required>
+                    <button type="submit" class="login-submit">Login</button>
+                </form>
+            </div>
+
+            <div id="register-box">
+                <h3>Register</h3>
+                <p>Create an account to get started.</p>
+                <button class="google-login">Sign up with Google</button>
+                <span class="divider">OR SIGN UP WITH</span>
+                <form id="register-form" onsubmit="handleFormSubmit(event, 'register-form', 'http://localhost:3001/api/register', 'Registration successful!', 'Registration failed')">
+                    <label>Full Name</label>
+                    <input type="text" name="fullname" placeholder="Enter your full name" required>
+                    <label>Email</label>
+                    <input type="email" name="email" placeholder="Enter your email" required>
+                    <label>Password</label>
+                    <input type="password" name="password" placeholder="Create a password" required>
+                    <button type="submit" class="login-submit">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

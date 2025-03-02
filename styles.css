@@ -1,0 +1,130 @@
+* {
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #D8B4F8;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: #A97CE6;
+}
+
+.logo a{
+    text-decoration: none;
+    color: #9333ea;
+    font-weight: 700;
+    box-shadow: 6px 5px 7px;
+    font-size: 18px;
+    padding: 6px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    font-size: 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+}
+
+.login-btn {
+    background: #ffffff00;
+    border: 1px solid #00000047;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.login-btn a{
+    text-decoration: none;
+    color: black;
+}
+
+.hero {
+    padding: 50px;
+}
+.professional,span{
+    font-size: larger;
+    font-weight: 500;
+}
+
+.hero h1 {
+    color: #6A0DAD;
+    font-size: 3em;
+    font-weight: 700;
+}
+
+.services {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.service-card {
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    width: 220px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.service-card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.cta-buttons {
+    margin: 30px 0;
+}
+
+.cta-buttons button {
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.cta-buttons a{
+    text-decoration: none;
+}
+
+.find-workers {
+    background: #6A0DAD;
+    color: #fff;
+    border: none;
+}
+
+.find-workers a{
+    color: white;
+}
+
+.register-worker {
+    background: transparent;
+border: 2px solid #0000003b;
+}
+
+.nav-links li :hover  {
+    color: #d8b4f8;
+    background-color: #9333ea;
+}
+
+::selection{
+    background-color: #9333ea;
+}
+

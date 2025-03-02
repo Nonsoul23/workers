@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register as a Worker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="Registerworker.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><a href="index.html">WorkerConnect</a></div>
+        <ul class="nav-links">
+            <li><a href="">Find Workers</a></li>
+            <li><a href="Registerworker.html">Register as Worker</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="help.html">Help</a></li>
+        </ul>
+        <button class="login-btn"><a href="login.html">Login</a></button>
+    </nav>
+
+    <main>
+        <div class="form-container">
+            <h2>Register as a Worker</h2>
+            <p>Fill out the form below to offer your services on our platform.</p>
+
+            <form id="worker-form" onsubmit="handleFormSubmit(event, 'worker-form', 'http://localhost:3001/api/Registerworker', 'Registration successful!', 'Registration failed')">
+                <label for="full-name">Full Name</label>
+                <input type="text" id="full-name" value="John Doe" >
+
+                <label for="phone">Phone Number</label>
+                <input type="text" id="phone" value="+1 234 567 8900" >
+
+                <label for="address">Address</label>
+                <input type="text" id="address" value="123 Main St" >
+
+                <label for="city">City</label>
+                <input type="text" id="city" value="New York" >
+
+                <label for="service">Service Type</label>
+                <select id="service">
+                    <option selected>Cleaning</option>
+                    <option>Mopping</option>
+                    <option>Dishwashing</option>
+                    <option>Maintenance</option>
+                    <option>Gardening</option>
+                </select>
+
+                <label for="experience">Years of Experience</label>
+                <input type="text" id="experience" value="0">
+
+                <label for="hourly-rate">Hourly Rate ($)</label>
+                <input type="text" id="hourly-rate" value="15">
+
+                <button type="submit" class="register-btn">Register as Worker</button>
+            </form>
+
+            <div id="alert-slider" class="alert-slider" style="display: none;">
+                <p id="alert-message"></p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

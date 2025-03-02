@@ -1,0 +1,47 @@
+* {
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.about-section {
+    background: #F6F2FA; /* Light off-white background */
+    margin: 30px;
+    padding: 40px;
+    border-radius: 12px;
+}
+
+.about-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #a97ce6;
+}
+
+.about-description {
+    font-size: 16px;
+    color: #444;
+    line-height: 1.5;
+}
+
+.section-heading {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 20px;
+    color: #333;
+}
+
+.mission-text {
+    font-size: 15px;
+    color: #666;
+}
+
+.how-it-works {
+    list-style-type: none;
+    padding-left: 20px;
+    font-size: 15px;
+    color: #666;
+}
+
+.how-it-works li {
+    margin: 5px 0;
+}
